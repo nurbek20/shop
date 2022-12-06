@@ -1,0 +1,38 @@
+nav {
+    background-color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+.menu {
+    width: 50%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+li {
+    font-size: 25px;
+}
+.dropdown {
+    border: none;
+    font-size: 25px;
+}
+.form_action {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.form_action input {
+    height: 35px;
+    width: 200px;
+    border: none;
+    font-size: 25px;
+    border-bottom: 1px solid red;
+}
+.form_action button {
+    font-size: 20px;
+    margin-right: 20px;
+}
