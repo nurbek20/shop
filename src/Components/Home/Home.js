@@ -3,7 +3,7 @@ import './Home.css'
 import { Card, Button } from 'react-bootstrap';
 
 const Home = (props) => {
-  const { data } = props
+  const { data, addToCard } = props
   return (
     <div className='card'>
       {
@@ -18,7 +18,7 @@ const Home = (props) => {
                 </Card.Text>
                 <div className='price'>
                   <span>{elem.price} $</span>
-                  <Button variant="primary">Добавить в Корзину</Button>
+                  <Button onClick={()=>addToCard(elem.id)} variant="primary">Добавить в Корзину</Button>
                 </div>
               </Card.Body>
             </Card>

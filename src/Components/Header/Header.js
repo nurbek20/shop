@@ -3,8 +3,9 @@ import "./Header.css";
 import { Link } from 'react-router-dom'
 
 const Header = (props) => {
-  const {category, val, setVal, searchClick, categoryClick}=props
+  const {category, val, setVal, searchClick, categoryClick, homeClick}=props
 
+  const keyPress=(e)=>e.key==="Enter"?searchClick():""
 
   return (
     <>
@@ -12,7 +13,7 @@ const Header = (props) => {
         <div className="container">
           <div className="navbar">
             <ul className="menu">
-              <li >
+              <li  onClick={()=>homeClick()}>
                 <Link className="link" to="/"><b>Home</b></Link>
               </li>
               <li>
@@ -32,7 +33,7 @@ const Header = (props) => {
             <div className="form_action">
               <div>
                 <input 
-                 
+                onKeyPress={(e)=>keyPress(e)}
                 value={val} 
                 onChange={(e)=>setVal(e.target.value)} 
                 type="text" />
