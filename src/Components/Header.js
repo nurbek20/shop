@@ -23,7 +23,7 @@ const Header = (props) => {
             <NavDropdown title="Category" id="navbarScrollingDropdown">
               {category.map((elem, index) => {
                 return (
-                  <NavDropdown.Item href="#action3">
+                  <NavDropdown.Item key={index} href="#action3">
                     {elem}
                   </NavDropdown.Item>
                 );

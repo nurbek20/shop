@@ -1,0 +1,12 @@
+.carts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}

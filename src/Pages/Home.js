@@ -1,8 +1,16 @@
 import React from 'react'
+import CartItem from '../Components/Cart-item'
 
-const Home = () => {
+const Home = (props) => {
+    const {data} = props
   return (
-    <div>Home</div>
+    <div className='home-card'>
+       {
+        data.map((elem, index)=>{
+            return  < CartItem key={index} {...elem} />
+        })
+       }
+    </div>
   )
 }
 
