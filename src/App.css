@@ -1,7 +1,23 @@
-.carts {
+.title, .price {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.title {
+    width: 100%;
+    height: 80px;
+}
+.description {
+    width: 100%;
+    height: 100px;
+    overflow: scroll;
+}
+.price {
+    margin-top: 10px;
+}
+.img {
+    width: 400px;
+    height: 250px;
 }
 
 .home-card {

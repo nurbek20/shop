@@ -6,15 +6,17 @@ const CartItem = (props) => {
   const { brand, title, description, price, images } = props;
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={images[0]} />
+      <Card.Img className="img" variant="top" src={images[0]} />
       <Card.Body>
-        <div className="carts">
+        <div className="title">
           <Card.Title>{title}</Card.Title>
-          <Card.Subtitle>{brand}</Card.Subtitle>
+          <Card.Title>{brand}</Card.Title>
         </div>
-        <Card.Text>{description}</Card.Text>
-        <div className="carts">
-          <Card.Title>{price} $</Card.Title>
+        <div className="description">
+          <Card.Text>{description}</Card.Text>
+        </div>
+        <div className="price">
+          <span>{price} $</span>
           <Button variant="primary">Add to Cart</Button>
         </div>
       </Card.Body>
