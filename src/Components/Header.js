@@ -5,13 +5,16 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
-  const { category } = props;
+  const { category,categoryClick,cart, homeClick } = props;
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar sticky="top"  expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#">Home</Navbar.Brand>
+        <Navbar.Brand onClick={homeClick} >
+          <Link className="link" to='/'>Home</Link>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -19,11 +22,13 @@ const Header = (props) => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Cart</Nav.Link>
+            <Nav.Link>
+              <Link className="link" to="cart">Cart {cart.length===0?null:cart.length} </Link>
+            </Nav.Link>
             <NavDropdown title="Category" id="navbarScrollingDropdown">
               {category.map((elem, index) => {
                 return (
-                  <NavDropdown.Item key={index} href="#action3">
+                  <NavDropdown.Item onClick={()=>categoryClick(elem)} key={index}>
                     {elem}
                   </NavDropdown.Item>
                 );
