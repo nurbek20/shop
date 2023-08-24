@@ -8,12 +8,23 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 
 const Header = (props) => {
-  const { category,categoryClick,cart, homeClick } = props;
+  const {
+    category,
+    categoryClick,
+    cart,
+    homeClick,
+    searchClick,
+    setInput,
+    input,
+  } = props;
+
   return (
-    <Navbar sticky="top"  expand="lg" className="bg-body-tertiary">
+    <Navbar sticky="top" expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand onClick={homeClick} >
-          <Link className="link" to='/'>Home</Link>
+        <Navbar.Brand onClick={homeClick}>
+          <Link className="link" to="/">
+            Home
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -23,12 +34,17 @@ const Header = (props) => {
             navbarScroll
           >
             <Nav.Link>
-              <Link className="link" to="cart">Cart {cart.length===0?null:cart.length} </Link>
+              <Link className="link" to="cart">
+                Cart {cart.length === 0 ? null : cart.length}{" "}
+              </Link>
             </Nav.Link>
             <NavDropdown title="Category" id="navbarScrollingDropdown">
               {category.map((elem, index) => {
                 return (
-                  <NavDropdown.Item onClick={()=>categoryClick(elem)} key={index}>
+                  <NavDropdown.Item
+                    onClick={() => categoryClick(elem)}
+                    key={index}
+                  >
                     {elem}
                   </NavDropdown.Item>
                 );
@@ -41,8 +57,10 @@ const Header = (props) => {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              value={input}
+              onChange={(e)=>setInput(e.target.value)}
             />
-            <Button variant="outline-success">Search</Button>
+            <Button onClick={searchClick} variant="outline-success">Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
