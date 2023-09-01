@@ -46,3 +46,8 @@
   text-decoration: none;
   color: #111;
 }
+
+.code {
+  text-align: center;
+  margin: 200px 0;
+}
